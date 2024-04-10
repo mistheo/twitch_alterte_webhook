@@ -48,7 +48,7 @@ def main():
         config = load_config()
         
         ch_name = config.get("channel_name")
-        logging.basicConfig(filename=('twitch_discord_' + ch_name + '.log'), level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+        logging.basicConfig(filename=('log/twitch_discord_' + ch_name + '.log'), level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
         
         cli_id = config.get("client_id_twitch")
         token_oauth = config.get("token_oauth_twitch")
