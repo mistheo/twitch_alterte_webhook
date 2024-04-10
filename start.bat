@@ -9,8 +9,8 @@ if "%1"=="" (
     rem If no argument is provided, execute the Python script without any arguments
     pythonw.exe "main.py"
 ) else (
-    python.exe "main.py" "%1"
+    pythonw.exe "main.py" "%1"
 )
 
-rem Pause the script execution for 5 seconds
+
 timeout 5 > nul

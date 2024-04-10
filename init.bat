@@ -6,6 +6,7 @@ set "PYTHON=python"
 
 REM Nom de l'environnement virtuel
 set "VENV_NAME=.venv"
+mkdir ./logs
 
 REM Création de l'environnement virtuel
 %PYTHON% -m venv %VENV_NAME%
