@@ -3,6 +3,7 @@ import logging
 from discord_webhook import DiscordWebhook
 import time
 import json
+import sys
 
 def load_config(filename='config.json'):
     with open(filename) as f:
@@ -38,17 +39,24 @@ def send_discord_webhook(webhook_url, message):
         logging.error(f"Error sending Discord webhook: {str(e)}")
 
 def parse_message(msg,data):    
-    msg = msg.replace("%USER%",data["user_name"])
-    msg = msg.replace("%PSEUDO%",data["user_login"])
-    msg = msg.replace("%TITLE%",data["title"])    
+    msg = msg.replace("$~USER",data["user_name"])
+    msg = msg.replace("$~PSEUDO",data["user_login"])
+    msg = msg.replace("$~TITLE",data["title"])
+    msg = msg.replace("$~GAME",data["game_name"])
     return msg
 
 def main():
     try:
-        config = load_config()
+        print("sys.argv: ",sys.argv)
+        
+        if len(sys.argv) == 2:
+            config = load_config(sys.argv[1])
+        else :
+            config = load_config()
+        
         
         ch_name = config.get("channel_name")
-        logging.basicConfig(filename=('log/twitch_discord_' + ch_name + '.log'), level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+        logging.basicConfig(filename=('logs/twitch_discord_' + ch_name + '.log'), level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
         
         cli_id = config.get("client_id_twitch")
         token_oauth = config.get("token_oauth_twitch")
@@ -59,6 +67,8 @@ def main():
         
         while True:
             stream_data = get_stream_data( ch_name, token_oauth , cli_id)
+            print(stream_data)
+            
             
             if stream_data and (announced == False):
                 announced = True
