@@ -1,13 +1,13 @@
 {
-    "channel_name": "tehkoff_exe",
+    "channel_name": "",
 
-    "client_id_twitch": "l204z7hbgw7zbaf31xhipqnvqbttrz",
+    "client_id_twitch": "",
     
-    "token_oauth_twitch": "zr5t6zq16qbsh1icin6fqniyzh7oth",
+    "token_oauth_twitch": "",
 
-    "discord_webhook_url": "https://discord.com/api/webhooks/1147440993537380484/zAmiF7UHwEDDgzwWwrCULqSJxa4X3veml91tOBm-hyT4KGlVc3EVHFEbRsimXZ7snEuZ",
+    "discord_webhook_url": "",
 
-    "discord_webhook_url_for_log": "https://discord.com/api/webhooks/1226962625846317076/daF2MSs1H8j_lZlAh5BbwjcvvYK5P0mtxzu2h3FfHB3DBjBsE21_yfgoZHfRNwq1Mmh0",
+    "discord_webhook_url_for_log": "",
 
     "message":" <@&1147441624171945984> $~USER part en live sur $~GAME ! \n:arrow_forward: **$~TITLE** \n:link: - <https://twitch.tv/$~PSEUDO> "
 }
